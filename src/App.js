@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
 function App() {
+  
+  React.useEffect(() => {
+    const headers = headers = { 'Content-Type': 'application/json' };
+    fetch('https://api.npms.io/v2/search?q=react', { headers })
+        .then(response => response.json())
+        .then(data => this.setState({ totalReactPackages: data.total }));
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
